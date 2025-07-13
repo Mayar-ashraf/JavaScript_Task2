@@ -3,7 +3,9 @@ var age = prompt("Enter your age:");
 var yearsOfExp = prompt("Enter years of experience: ");
 var selfRating = prompt("Enter your Self-Rating (from 1 to 10): ");
 var category; 
-
+while( Number(selfRating) < 1 || Number(selfRating) > 10){
+    selfRating = prompt("Please enter a valid Self-Rating (from 1 to 10): ");
+}
 if(yearsOfExp < 2){
     category = "Junior";
 }else if(yearsOfExp >= 2 && yearsOfExp < 5){
@@ -58,7 +60,7 @@ if(hour >= 18 || hour < 9 ){
 
 report = `Welcome ${name}! You are ${age} years old.\n`
 report = report + `Your Job Category is ${category}.\nYour Performance level is ${level}.\n`;
-report = report + `Your salary = ${finalSalary} L.E. \nYou are in the ${shift}`;
+report = report + `Your salary = ${finalSalary} L.E. \nYou are in the ${shift}.`;
 console.log(report);
 window.alert(report);
 document.getElementById("paragraph").innerText = report;
