@@ -2,22 +2,24 @@ var name = prompt("Enter your name:");
 var age = prompt("Enter your age:");
 var yearsOfExp = prompt("Enter years of experience: ");
 var selfRating = prompt("Enter your Self-Rating (from 1 to 10): ");
-var category; 
-while( Number(selfRating) < 1 || Number(selfRating) > 10){
+var category;
+
+while (Number(selfRating) < 1 || Number(selfRating) > 10) {
     selfRating = prompt("Please enter a valid Self-Rating (from 1 to 10): ");
 }
-if(yearsOfExp < 2){
+
+if (yearsOfExp < 2) {
     category = "Junior";
-}else if(yearsOfExp >= 2 && yearsOfExp < 5){
+} else if (yearsOfExp >= 2 && yearsOfExp < 5) {
     category = "Mid-Level";
-}else if(yearsOfExp >= 5 && yearsOfExp < 10){
+} else if (yearsOfExp >= 5 && yearsOfExp < 10) {
     category = "Senior";
-}else{
+} else {
     category = "Expert";
 }
 
 var level;
-switch (selfRating){
+switch (selfRating) {
     case "10":
     case "9":
         level = "Excellent";
@@ -25,7 +27,7 @@ switch (selfRating){
     case "8":
     case "7":
         level = "Good";
-        break;   
+        break;
     case "6":
     case "5":
         level = "Average";
@@ -38,11 +40,11 @@ switch (selfRating){
 let baseSalary = 5000;
 var bonus;
 
-if(yearsOfExp <= 2){
+if (yearsOfExp <= 2) {
     bonus = 0.1 * baseSalary;
-}else if(yearsOfExp <= 3 && yearsOfExp >= 5){
+} else if (yearsOfExp <= 3 && yearsOfExp >= 5) {
     bonus = 0.15 * baseSalary;
-}else{
+} else {
     bonus = 0.2 * baseSalary;
 }
 
@@ -51,10 +53,10 @@ var finalSalary = baseSalary + bonus
 var hour = new Date().getHours();
 var shift;
 
-if(hour >= 9 && hour < 18){
+if (hour >= 9 && hour < 18) {
     shift = "Day Shift";
 }
-if(hour >= 18 || hour < 9 ){
+if (hour >= 18 || hour < 9) {
     shift = "Night Shift";
 }
 
